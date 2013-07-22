@@ -1,0 +1,7 @@
+A sample to run py.test over BrowserStack Automate.
+
+To run the tests, add you credentials to `google-search-browserstack.py` and execute:
+
+```
+py.test google-search-browserstack.py
+```
