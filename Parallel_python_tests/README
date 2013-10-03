@@ -1,0 +1,9 @@
+To run the same tests on various OS/Browser combinations.
+
+Add the Browser/OS capabilities required in browsers.json file.
+Run from shell "python run_parallel_tests.py <your_test.py>" 
+Acc to example : "python run_parallel_tests.py sample.py" 
+
+<your_test.py> should have the format of sample.py to run the tests parallelly.
+You can mention the extra capabilities required for all tests as mentioned in sample.py.
+You can add your python selenium code as mentioned in sample.py.
