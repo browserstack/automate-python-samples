@@ -1,6 +1,8 @@
 To run the same tests on various OS/Browser combinations.
 
 Add the Browser/OS capabilities required in browsers.json file.
+(Add diff combinations within your parallel limit)
+
 Run from shell "python run_parallel_tests.py <your_test.py>" 
 Acc to example : "python run_parallel_tests.py sample.py" 
 
