@@ -17,7 +17,7 @@ caps = dict(caps.items() + instance_caps.items())
 # THE TEST TO BE RUN PARALLELY GOES HERE
 
 driver = webdriver.Remote(
-  command_executor='http://AbhinavSikri:Qxx2dz8Q1sy4qqLYkv71@hub.browserstack.com/wd/hub',
+  command_executor='http://Browserstack_UserName:Browserstack_AuthKey@hub.browserstack.com/wd/hub',
   desired_capabilities=caps)
 
 driver.get("http://www.google.com")
