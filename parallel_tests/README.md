@@ -35,7 +35,7 @@ test.py - This file contains the selenium test which would be run in each of the
     
     caps = dict(caps.items() + instance_caps.items())
     
-    # Your test to be rn on various combinations go here :
+    # Sample selenium test
     driver = webdriver.Remote(
       command_executor='http://<browserstack_UserName>:<browserstack_AuthKey>@hub.browserstack.com/wd/hub',
       desired_capabilities=caps)
