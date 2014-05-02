@@ -3,8 +3,8 @@ from selenium import webdriver
 #import lettuce_webdriver.webdriver
 from salad.terrains.everything import *
 # Edit these to match your credentials
-USERNAME = "akshaybhardwaj1"
-BROWSERSTACK_KEY = "XQWDewaJsUzqYJRv8zhr"
+USERNAME = "<browserstack-username>"
+BROWSERSTACK_KEY = "<browserstack-key>"
 
 if not (USERNAME and BROWSERSTACK_KEY):
     raise Exception("Please provide your BrowserStack username and access key")
