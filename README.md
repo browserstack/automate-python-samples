@@ -36,3 +36,9 @@ If pip is not installed, you can install it using:
 ```
 sudo easy_install pip
 ```
+
+For Python frameworks samples and integrations with BrowserStack, refer to their individual repositories - 
+
+- [Behave](https://github.com/browserstack/behave-browserstack)
+- [Lettuce](https://github.com/browserstack/lettuce-browserstack)
+- [Salad](https://github.com/browserstack/salad-browserstack)
