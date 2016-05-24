@@ -7,9 +7,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # Edit these to match your credentials
 USERNAME = None
-BROWSERSTACK_KEY = None
+BROWSERSTACK_ACCESS_KEY = None
 
-if not (USERNAME and BROWSERSTACK_KEY):
+if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
     raise Exception("Please provide your BrowserStack username and access key")
     sys.exit(1)
 
@@ -17,7 +17,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
-            USERNAME, BROWSERSTACK_KEY
+            USERNAME, BROWSERSTACK_ACCESS_KEY
         )
 
         self.driver = webdriver.Remote(

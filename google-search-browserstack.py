@@ -6,14 +6,14 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 try:
     USERNAME = sys.argv[1]
-    BROWSERSTACK_KEY = sys.argv[2]
+    BROWSERSTACK_ACCESS_KEY = sys.argv[2]
 except IndexError:
     print("Pleaes provide the username and browserstack access key as command line arguments.")
     sys.exit(1)
 
 driver = webdriver.Remote(
     command_executor='http://%s:%s@hub.browserstack.com/wd/hub' %(
-        USERNAME, BROWSERSTACK_KEY
+        USERNAME, BROWSERSTACK_ACCESS_KEY
     ),
     desired_capabilities=DesiredCapabilities.FIREFOX
 )
