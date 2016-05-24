@@ -1,8 +1,8 @@
 """
 @param USERNAME: Browserstack username
 @type USERNAME: string
-@param BROWSERSTACK_KEY: Browserstack api key
-@type BROWSERSTACK_KEY: string
+@param BROWSERSTACK_ACCESS_KEY: Browserstack api key
+@type BROWSERSTACK_ACCESS_KEY: string
 @description: Supply these arguments from commandline while running this script
 """
 import sys
@@ -22,7 +22,7 @@ caps["browserstack.debug"] = "true"
 # Take input of user credentials
 try:
     USERNAME = sys.argv[1]
-    BROWSERSTACK_KEY = sys.argv[2]
+    BROWSERSTACK_ACCESS_KEY = sys.argv[2]
 except IndexError:
     print("Pleaes provide the username, browserstack access key and filename with which screenshot should be saved as command line arguments.")
     sys.exit(1)
