@@ -1,3 +1,4 @@
+import os
 import sys
 import unittest
 
@@ -6,8 +7,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 try:
-    USERNAME = sys.argv[1]
-    BROWSERSTACK_ACCESS_KEY = sys.argv[2]
+    USERNAME = os.environ.get('BROWSERSTACK_USERNAME') or sys.argv[1]
+    BROWSERSTACK_ACCESS_KEY = os.environ.get('BROWSERSTACK_ACCESS_KEY') or sys.argv[2]
 except IndexError:
     print("Please provide the username and browserstack access key as command line arguments.")
     sys.exit(1)
