@@ -19,10 +19,22 @@ class PythonOrgSearch(unittest.TestCase):
         url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
             USERNAME, BROWSERSTACK_ACCESS_KEY
         )
-
+        capabilities = {
+            'browserName': 'Firefox',
+            'browserVersion': '65.0',
+            'browserstack.use_w3c': 'true',
+            'bstack:options': {
+                'os': 'Windows',
+                'buildName': 'automate-python-samples',
+                'osVersion': '10',
+                'sessionName': 'unittest_single_test',
+                'projectName': 'Sample project',
+                'debug': 'true'
+            }
+        }
         self.driver = webdriver.Remote(
             command_executor=url,
-            desired_capabilities=DesiredCapabilities.FIREFOX
+            desired_capabilities=capabilities
         )
 
     def test_search_in_python_org(self):
@@ -33,8 +45,8 @@ class PythonOrgSearch(unittest.TestCase):
         elem.submit()
         self.assertIn("Google", driver.title)
 
-        def tearDown(self):
-            self.driver.quit()
+    def tearDown(self):
+        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main(argv=sys.argv[:1])
