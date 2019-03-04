@@ -13,7 +13,7 @@ except IndexError:
     sys.exit(1)
 
 driver = webdriver.Remote(
-    command_executor='http://%s:%s@hub.browserstack.com/wd/hub' % (
+    command_executor='https://%s:%s@hub.browserstack.com/wd/hub' % (
         USERNAME, BROWSERSTACK_ACCESS_KEY
     ),
     desired_capabilities=DesiredCapabilities.FIREFOX
