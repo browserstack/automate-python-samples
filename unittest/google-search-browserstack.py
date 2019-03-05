@@ -1,3 +1,4 @@
+import os
 import sys
 import unittest
 
@@ -6,8 +7,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 try:
-    USERNAME = sys.argv[1]
-    BROWSERSTACK_ACCESS_KEY = sys.argv[2]
+    USERNAME = os.environ.get('BROWSERSTACK_USERNAME') or sys.argv[1]
+    BROWSERSTACK_ACCESS_KEY = os.environ.get('BROWSERSTACK_ACCESS_KEY') or sys.argv[2]
 except IndexError:
     print("Please provide the username and browserstack access key as command line arguments.")
     sys.exit(1)
@@ -15,13 +16,25 @@ except IndexError:
 class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
-        url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
+        url = "https://%s:%s@hub.browserstack.com/wd/hub" %(
             USERNAME, BROWSERSTACK_ACCESS_KEY
         )
-
+        capabilities = {
+            'browserName': 'Firefox',
+            'browserVersion': '65.0',
+            'browserstack.use_w3c': 'true',
+            'bstack:options': {
+                'os': 'Windows',
+                'buildName': 'automate-python-samples',
+                'osVersion': '10',
+                'sessionName': 'unittest_single_test',
+                'projectName': 'Sample project',
+                'debug': 'true'
+            }
+        }
         self.driver = webdriver.Remote(
             command_executor=url,
-            desired_capabilities=DesiredCapabilities.FIREFOX
+            desired_capabilities=capabilities
         )
 
     def test_search_in_python_org(self):
@@ -32,8 +45,8 @@ class PythonOrgSearch(unittest.TestCase):
         elem.submit()
         self.assertIn("Google", driver.title)
 
-        def tearDown(self):
-            self.driver.quit()
+    def tearDown(self):
+        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main(argv=sys.argv[:1])

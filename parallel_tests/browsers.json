@@ -1,37 +1,40 @@
 [
   {
-    "browserName": "iPhone",
-    "platform": "MAC",
-    "device": "iPhone 5"
+    "browserName": "Firefox",
+    "browserVersion": "42.0",
+    "browserstack.use_w3c": true,
+    "bstack:options": {
+      "os": "OS X",
+      "osVersion": "Snow Leopard",
+      "sessionName": "parallel_test",
+      "buildName": "automate-python-samples",
+      "projectName": "Sample Project",
+      "debug": true
+    }
   },
   {
-    "browser": "firefox",
-    "browser_version": "17.0",
-    "os": "Windows",
-    "os_version": "8"
+    "browserName": "Internet Explorer",
+    "browserVersion": "10",
+    "browserstack.use_w3c": true,
+    "bstack:options": {
+      "os": "Windows",
+      "sessionName": "parallel_test",
+      "buildName": "automate-python-samples",
+      "projectName": "Sample Project",
+      "debug": true
+    }
   },
   {
-    "browser": "ie",
-    "browser_version": "8.0",
-    "os": "Windows",
-    "os_version": "7"
-  },
-  {
-    "browser": "ie",
-    "browser_version": "9.0",
-    "os": "Windows",
-    "os_version": "7"
-  },
-  {
-    "browser": "ie",
-    "browser_version": "10.0",
-    "os": "Windows",
-    "os_version": "8"
-  },
-  {
-    "browser": "firefox",
-    "browser_version": "15.0",
-    "os": "OS X",
-    "os_version": "Snow Leopard"
+    "browserName": "Chrome",
+    "browserVersion": "70.0",
+    "browserstack.use_w3c": true,
+    "bstack:options": {
+      "os": "Windows",
+      "osVersion": "7",
+      "sessionName": "parallel_test",
+      "buildName": "automate-python-samples",
+      "projectName": "Sample Project",
+      "debug": true
+    }
   }
 ]

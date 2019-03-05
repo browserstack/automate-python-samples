@@ -1,7 +1,9 @@
-automate-python-samples
-=======================
+# automate-python-samples
 
 Documentation for writing Automate test scripts in Python.
+
+## Environment variables
+To test varios sample repositories with ease,  it is recommended to setup `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables. If you don't wish you can directly edit the samples and add add credentials in them.
 
 ## Install Python
 
