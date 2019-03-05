@@ -16,7 +16,7 @@ except IndexError:
 class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
-        url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
+        url = "https://%s:%s@hub.browserstack.com/wd/hub" %(
             USERNAME, BROWSERSTACK_ACCESS_KEY
         )
 
