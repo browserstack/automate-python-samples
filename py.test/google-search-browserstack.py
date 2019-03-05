@@ -12,7 +12,7 @@ if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
     raise Exception("Please provide your BrowserStack username and access key")
 
 def test_run():
-    url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
+    url = "https://%s:%s@hub.browserstack.com/wd/hub" %(
         USERNAME, BROWSERSTACK_ACCESS_KEY
     )
 
