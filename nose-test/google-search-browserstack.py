@@ -1,3 +1,4 @@
+import os
 import sys
 import unittest
 
@@ -6,17 +7,16 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # Edit these to match your credentials
-USERNAME = None
-BROWSERSTACK_ACCESS_KEY = None
+USERNAME = os.environ.get('BROWSERSTACK_USERNAME') or sys.argv[3]
+BROWSERSTACK_ACCESS_KEY = os.environ.get('BROWSERSTACK_ACCESS_KEY') or sys.argv[4]
 
 if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
     raise Exception("Please provide your BrowserStack username and access key")
-    sys.exit(1)
 
 class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
-        url = "http://%s:%s@hub.browserstack.com/wd/hub" %(
+        url = "https://%s:%s@hub.browserstack.com/wd/hub" %(
             USERNAME, BROWSERSTACK_ACCESS_KEY
         )
 
