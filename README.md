@@ -2,6 +2,9 @@
 
 Documentation for writing Automate test scripts in Python.
 
+Master branch contains **Selenium 3** samples, for **Selenium 4 - W3C protocol** please checkout [selenium-4](https://github.com/browserstack/automate-python-samples/tree/selenium-4) branch
+
+
 ## Environment variables
 To test various sample repositories with ease, it is recommended to setup `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables. Alternatively you can directly update the samples with the credentials or pass the appropriate command line parameters.
 
