@@ -18,7 +18,7 @@ if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
 class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
-        url = "http://%s:%s@hub.browserstack.com/wd/hub" % (
+        url = "https://%s:%s@hub.browserstack.com/wd/hub" % (
             USERNAME, BROWSERSTACK_ACCESS_KEY
         )
         capabilities = {

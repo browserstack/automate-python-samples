@@ -14,7 +14,7 @@ if not (USERNAME and BROWSERSTACK_ACCESS_KEY):
 
 
 def test_run():
-    url = "http://%s:%s@hub.browserstack.com/wd/hub" % (
+    url = "https://%s:%s@hub.browserstack.com/wd/hub" % (
         USERNAME, BROWSERSTACK_ACCESS_KEY
     )
     capabilities = {
