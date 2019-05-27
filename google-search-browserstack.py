@@ -9,7 +9,7 @@ try:
     USERNAME = os.environ.get('BROWSERSTACK_USERNAME') or sys.argv[1]
     BROWSERSTACK_ACCESS_KEY = os.environ.get('BROWSERSTACK_ACCESS_KEY') or sys.argv[2]
 except IndexError:
-    print("Pleaes provide the username and browserstack access key as command line arguments.")
+    print("Please provide the username and browserstack access key as command line arguments.")
     sys.exit(1)
 
 driver = webdriver.Remote(
