@@ -12,12 +12,12 @@ To test various sample repositories with ease, it is recommended to setup `BROWS
 
 ### For Windows:
 
- - Download the latest python build for windows - http://sourceforge.net/projects/pywin32/files/pywin32/
+ - Download the latest python build for windows - https://www.python.org/downloads/windows/
  - Run the installer exe and follow the instructions to install python.
 
 ### For Mac and Linux:
 
- - Run python --version to see what python version is installed and make sure it is 2.5.X and above.
+ - Run python --version to see what python version is installed and make sure it is 3.X and above.
  - Mac OS, Ubuntu and many flavors of linux come with pre-installed python.
 
 ## Install Selenium

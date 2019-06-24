@@ -1,7 +1,13 @@
-import json, sys, subprocess
+import json
+import sys
+import subprocess
 
-file_name = sys.argv[1]
-json_name = sys.argv[2]
+try:
+	file_name = sys.argv[1]
+	json_name = sys.argv[2]
+except IndexError:
+	print("Please provide test script and browserconfig as first and second argument, respectively, from command line.")
+	sys.exit(1)
 
 with open(json_name, "r") as f:
     obj = json.loads(f.read())
@@ -9,7 +15,7 @@ with open(json_name, "r") as f:
 num_of_tests = len(obj)
 process = []
 for counter in range(num_of_tests):
-	cmd = "python "+str(file_name)+ " " +str(json_name)+ " " +str(counter)
+	cmd = "python3 %s %s %s" % (file_name, json_name, counter)
 	process.append(subprocess.Popen(cmd, shell=True))
 
 for counter in range(num_of_tests):

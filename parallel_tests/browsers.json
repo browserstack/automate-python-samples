@@ -1,8 +1,8 @@
 [
   {
-    "browserName": "iPhone",
-    "platform": "MAC",
-    "device": "iPhone 5"
+    "browserName": "safari",
+    "platform": "IOS",
+    "device": "iPhone 5S"
   },
   {
     "browser": "firefox",

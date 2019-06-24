@@ -23,12 +23,13 @@ caps["browserstack.debug"] = "true"
 try:
     USERNAME = sys.argv[1]
     BROWSERSTACK_ACCESS_KEY = sys.argv[2]
+    FILENAME = sys.argv[3]
 except IndexError:
     print("Pleaes provide the username, browserstack access key and filename with which screenshot should be saved as command line arguments.")
     sys.exit(1)
 
 # Define take_screenshot 
-def take_screenshot(webdriver, file_name = "sample.png"):
+def take_screenshot(webdriver, file_name="sample.png"):
     """
     @param webdriver: WebDriver handler.
     @type webdriver: WebDriver
@@ -37,21 +38,22 @@ def take_screenshot(webdriver, file_name = "sample.png"):
     """
     if isinstance(webdriver, WebDriver):
         base64_data = webdriver.get_screenshot_as_base64()
-        screenshot_data = base64.decodestring(base64_data)
-        screenshot_file = open(file_name, "w")
+        screenshot_data = base64.b64decode(base64_data)
+        screenshot_file = open(file_name, "wb")
         screenshot_file.write(screenshot_data)
         screenshot_file.close()
     else:
         webdriver.save_screenshot(filename)
 
 driver = webdriver.Remote(
-    command_executor = 'http://akshaybhardwaj1:XQWDewaJsUzqYJRv8zhr@hub.browserstack.com/wd/hub',
-    desired_capabilities = caps)
+    command_executor = 'http://%s:%s@hub.browserstack.com/wd/hub' % (USERNAME, BROWSERSTACK_ACCESS_KEY),
+    desired_capabilities = caps
+)
 
 driver.get("http://www.google.com")
 inputElement = driver.find_element_by_name("q")
 inputElement.send_keys("browserstack")
 inputElement.submit()
-print driver.title
-take_screenshot(driver, './sample.png')
+print(driver.title)
+take_screenshot(driver, FILENAME)
 driver.quit()

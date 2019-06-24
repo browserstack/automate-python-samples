@@ -25,4 +25,6 @@ This project contains 3 files. Each of the files is described below.
 
 To run the tests in parallel execute the following command:
 
-    python run_parallel_tests.py test.py browsers.json
+```sh
+python3 run_parallel_tests.py test.py browsers.json
+```

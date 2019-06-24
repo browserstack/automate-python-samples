@@ -27,5 +27,5 @@ elem = driver.find_element_by_name("q")
 elem.send_keys("selenium")
 elem.submit()
 
-print driver.title
+print(driver.title)
 driver.quit()
