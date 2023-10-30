@@ -36,3 +36,6 @@ nosetests.xml
 
 # Sample files(generated while execution)
 sample.png
+
+# Env variables
+.env
