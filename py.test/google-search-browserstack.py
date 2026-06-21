@@ -2,6 +2,7 @@ import os
 import sys
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # Edit these to match your credentials
@@ -21,7 +22,7 @@ def test_run():
 
     if not "Google" in driver.title:
         raise Exception("Are you not on google? How come!")
-        elem = driver.find_element_by_name("q")
+        elem = driver.find_element(By.NAME, "q")
         elem.send_keys("selenium")
         elem.submit()
         driver.quit()

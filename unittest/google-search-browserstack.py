@@ -4,6 +4,7 @@ import unittest
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 try:
@@ -22,13 +23,13 @@ class PythonOrgSearch(unittest.TestCase):
 
         self.driver = webdriver.Remote(
             command_executor=url,
-            desired_capabilities=DesiredCapabilities.FIREFOX
+            #desired_capabilities=DesiredCapabilities.FIREFOX
         )
 
     def test_search_in_python_org(self):
         driver = self.driver
         driver.get("http://www.google.com")
-        elem = driver.find_element_by_name("q")
+        elem = driver.find_element(By.NAME, "q")
         elem.send_keys("selenium")
         elem.submit()
         self.assertIn("Google", driver.title)

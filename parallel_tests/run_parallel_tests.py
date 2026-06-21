@@ -20,4 +20,3 @@ for counter in range(num_of_tests):
 
 for counter in range(num_of_tests):
 	process[counter].wait()
-

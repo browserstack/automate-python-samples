@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import os, sys, json
 
 try:
@@ -38,7 +39,7 @@ driver = webdriver.Remote(
 )
 
 driver.get("http://www.google.com")
-inputElement = driver.find_element_by_name("q")
+inputElement = driver.find_element(By.NAME, "q")
 inputElement.send_keys("browserstack")
 inputElement.submit()
 print(driver.title)
